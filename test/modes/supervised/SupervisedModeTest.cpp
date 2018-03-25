@@ -18,6 +18,7 @@ void SupervisedModeTest::SetUp() {
     Mock::VerifyAndClearExpectations(&environment);
     Mock::VerifyAndClearExpectations(&mockMotorDriver);
     Mock::VerifyAndClearExpectations(&mockController);
+    Mock::VerifyAndClearExpectations(&missionManager);
 
     Environment::setEnvironment(environment);
     supervisedMode = {};
@@ -25,6 +26,7 @@ void SupervisedModeTest::SetUp() {
     EXPECT_CALL(environment, getMotorDriver()).WillRepeatedly(ReturnRef(mockMotorDriver));
     EXPECT_CALL(environment, getController()).WillRepeatedly(ReturnRef(mockController));
     EXPECT_CALL(environment, getObstacleSensor()).WillRepeatedly(ReturnRef(obstacleSensor));
+    EXPECT_CALL(environment, getMissionManager()).WillRepeatedly(ReturnRef(missionManager));
 }
 
 void SupervisedModeTest::TearDown() {

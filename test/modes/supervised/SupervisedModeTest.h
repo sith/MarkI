@@ -12,6 +12,7 @@
 #include "../../mocks/MockController.h"
 #include "../../mocks/MockObstacleSensor.h"
 #include "../../mocks/MockEnvironment.h"
+#include "../../mocks/MockMissionManager.h"
 
 class SupervisedModeTest : public testing::Test {
 
@@ -26,6 +27,7 @@ protected:
     MockMotorDriver mockMotorDriver;
     MockController mockController;
     MockObstacleSensor obstacleSensor;
+    MockMissionManager missionManager;
 };
 
 

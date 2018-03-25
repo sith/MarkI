@@ -18,10 +18,10 @@ void InMemoryMissionManagerTest::SetUp() {
 }
 
 TEST_F(InMemoryMissionManagerTest, replayRecord) {
-    EXPECT_CALL(clock, getTime()).Times(Exactly(4));
-    EXPECT_CALL(motorDriver, execute(Direction::FORWARD, Speed::LOW_SPEED)).Times(Exactly(2));
-    EXPECT_CALL(motorDriver, execute(Direction::BACKWARD, Speed::HIGH_SPEED)).Times(Exactly(2));
-    EXPECT_CALL(motorDriver, stop()).Times(Exactly(2));
+    EXPECT_CALL(clock, getTime()).Times(Exactly(10));
+    EXPECT_CALL(motorDriver, executeInternal(Direction::FORWARD, Speed::LOW_SPEED)).Times(Exactly(1));
+    EXPECT_CALL(motorDriver, executeInternal(Direction::BACKWARD, Speed::HIGH_SPEED)).Times(Exactly(1));
+    EXPECT_CALL(motorDriver, executeInternal(Direction::NONE, Speed::NONE)).Times(Exactly(2));
 
     missionManager.recordMission();
 
@@ -30,16 +30,16 @@ TEST_F(InMemoryMissionManagerTest, replayRecord) {
     missionManager.onMotorStop();
 
     missionManager.stopMissionRecording();
-
      missionManager.replayLastMission();
 
+     missionManager.onEvent();
      missionManager.onEvent();
      missionManager.onEvent();
      missionManager.onEvent();
 }
 
 
-TEST(InMemoryMissionManagerTest, stopReplaying) {
+TEST_F(InMemoryMissionManagerTest, stopReplaying) {
 
 
 }

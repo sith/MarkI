@@ -58,4 +58,4 @@ target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_time)
 add_subdirectory(test)
 
 install(DIRECTORY "src/"
-        DESTINATION "/Users/oleksandrabaukh/workspace/MarkOS/MarkI")
+        DESTINATION "/Users/oleksandrabaukh/workspace/libs/MarkOS/MarkI")

@@ -21,7 +21,7 @@ add_executable(${PROJECT_NAME}
         mocks/MockEnvironment.h
         mocks/MockFile.h
         mocks/MockMissionIdGenerator.h
-        missions/InMemoryMissionManagerTest.cpp missions/InMemoryMissionManagerTest.h mocks/MockLogger.h mocks/PassThroughLoggerFactory.h)
+        missions/InMemoryMissionManagerTest.cpp missions/InMemoryMissionManagerTest.h mocks/MockLogger.h mocks/PassThroughLoggerFactory.h mocks/MockMissionManager.h)
 
 target_link_libraries(${PROJECT_NAME} MarkOS_commons)
 target_link_libraries(${PROJECT_NAME} MarkOS_communication)
