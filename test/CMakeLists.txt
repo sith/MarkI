@@ -21,14 +21,21 @@ add_executable(${PROJECT_NAME}
         mocks/MockEnvironment.h
         mocks/MockFile.h
         mocks/MockMissionIdGenerator.h
-        missions/InMemoryMissionManagerTest.cpp missions/InMemoryMissionManagerTest.h mocks/MockLogger.h mocks/PassThroughLoggerFactory.h mocks/MockMissionManager.h)
+        missions/InMemoryMissionManagerTest.cpp
+        missions/InMemoryMissionManagerTest.h
+        mocks/MockLogger.h
+        mocks/PassThroughLoggerFactory.h
+        mocks/MockMissionManager.h
+        controller/RemoteControllerTest.cpp
+        controller/RemoteControllerTest.h)
 
-target_link_libraries(${PROJECT_NAME} MarkOS_commons)
-target_link_libraries(${PROJECT_NAME} MarkOS_communication)
-target_link_libraries(${PROJECT_NAME} MarkOS_controller)
-target_link_libraries(${PROJECT_NAME} MarkOS_cycle)
-target_link_libraries(${PROJECT_NAME} MarkOS_time)
-target_link_libraries(${PROJECT_NAME} MarkI)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_commons)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_communication)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_controller)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_controller_test)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_cycle)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_time)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkI)
 
-target_link_libraries(${PROJECT_NAME} gtest gtest_main)
-target_link_libraries(${PROJECT_NAME} gmock gmock_main)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC gmock gmock_main)

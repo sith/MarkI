@@ -46,7 +46,7 @@ add_library(${PROJECT_NAME}
         src/missions/InMemoryMissionManager.cpp
         src/constants.h
         src/modes/missionReplay/ReplayMissionMode.cpp
-        src/modes/missionReplay/ReplayMissionMode.h)
+        src/modes/missionReplay/ReplayMissionMode.h src/controller/RemoteController.cpp src/controller/RemoteController.h)
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 target_link_libraries(${PROJECT_NAME} LINK_PUBLIC MarkOS_commons)
