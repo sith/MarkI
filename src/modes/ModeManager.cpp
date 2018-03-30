@@ -7,7 +7,7 @@ void ModeManager::onModeChange(ModeName mode) {
         return;
     }
     stopCurrentMode();
-    logger->newLine()->logAppend("New mode");
+    logger->newLine()->logAppend("New mode")->logAppend((int) mode);
     switch (mode) {
         case ModeName::CALIBRATION:
             break;

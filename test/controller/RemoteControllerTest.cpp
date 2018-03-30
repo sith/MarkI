@@ -64,7 +64,7 @@ TEST_F(RemoteControllerTest, stopMode) {
 
 TEST_F(RemoteControllerTest, supervisedMode) {
     message.content.a = true;
-    EXPECT_CALL(mockReceiver, receive()).Times(Exactly(2)).WillOnce(Return(mark_os::commons::optional(message)));
+    EXPECT_CALL(mockReceiver, receive()).Times(Exactly(2)).WillRepeatedly(Return(mark_os::commons::optional(message)));
     EXPECT_CALL(mockModeListener, onModeChange(ModeName::SUPERVISED)).Times(Exactly(1));
     remoteController.onEvent(1);
     ASSERT_EQ(remoteController.readControllerCommand(), Command::SELECT_MODE);
@@ -72,7 +72,7 @@ TEST_F(RemoteControllerTest, supervisedMode) {
 
 TEST_F(RemoteControllerTest, freeRunMode) {
     message.content.b = true;
-    EXPECT_CALL(mockReceiver, receive()).Times(Exactly(2)).WillOnce(Return(mark_os::commons::optional(message)));
+    EXPECT_CALL(mockReceiver, receive()).Times(Exactly(2)).WillRepeatedly(Return(mark_os::commons::optional(message)));
     EXPECT_CALL(mockModeListener, onModeChange(ModeName::FREE_RUN)).Times(Exactly(1));
     remoteController.onEvent(1);
     ASSERT_EQ(remoteController.readControllerCommand(), Command::SELECT_MODE);
@@ -80,7 +80,7 @@ TEST_F(RemoteControllerTest, freeRunMode) {
 
 TEST_F(RemoteControllerTest, missionReplayMode) {
     message.content.x = true;
-    EXPECT_CALL(mockReceiver, receive()).Times(Exactly(2)).WillOnce(Return(mark_os::commons::optional(message)));
+    EXPECT_CALL(mockReceiver, receive()).Times(Exactly(2)).WillRepeatedly(Return(mark_os::commons::optional(message)));
     EXPECT_CALL(mockModeListener, onModeChange(ModeName::MISSION_REPLAY)).Times(Exactly(1));
     remoteController.onEvent(1);
     ASSERT_EQ(remoteController.readControllerCommand(), Command::SELECT_MODE);
