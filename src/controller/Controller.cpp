@@ -62,7 +62,7 @@ void Controller::notifyOnCommand(Command command) {
     }
 }
 
-List<ControllerCommandListener> *Controller::getCommandListeners() const {
+mark_os::commons::List<ControllerCommandListener> *Controller::getCommandListeners() const {
     return commandListeners.get();
 }
 

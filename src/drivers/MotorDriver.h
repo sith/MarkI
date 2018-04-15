@@ -34,7 +34,7 @@ public:
 class MotorDriver {
     Speed currentSpeed = Speed::NONE;
     Direction currentDirection = Direction::NONE;
-    Pointer<List<MotorDriverCommandListener>> listeners{new LinkedList<MotorDriverCommandListener>};
+    Pointer<mark_os::commons::List<MotorDriverCommandListener>> listeners{new mark_os::commons::LinkedList<MotorDriverCommandListener>};
 protected:
     virtual void executeInternal(Direction direction, Speed speed)= 0;
 

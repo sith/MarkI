@@ -28,7 +28,7 @@ public:
 };
 
 class ObstacleSensor : public mark_os::cycle::CycleListener {
-    Pointer<List<ObstacleListener>> listeners{new LinkedList<ObstacleListener>};
+    Pointer<mark_os::commons::List<ObstacleListener>> listeners{new mark_os::commons::LinkedList<ObstacleListener>};
 public:
     void addListener(ObstacleListener *obstacleListener);
 

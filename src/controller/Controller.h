@@ -12,7 +12,7 @@
 
 class Controller : public mark_os::cycle::CycleListener {
     EmptyModeListener defaultModeListener;
-    Pointer<List<ControllerCommandListener>> commandListeners{new LinkedList<ControllerCommandListener>};
+    Pointer<mark_os::commons::List<ControllerCommandListener>> commandListeners{new mark_os::commons::LinkedList<ControllerCommandListener>};
 
     void notifyOnCommand(Command command);
 
@@ -40,7 +40,7 @@ public:
     virtual Command readControllerCommand()=0;
 
     //TODO must be friend
-    List<ControllerCommandListener> *getCommandListeners() const;
+    mark_os::commons::List<ControllerCommandListener> *getCommandListeners() const;
 
 };
 
