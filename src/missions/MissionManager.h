@@ -7,7 +7,7 @@
 
 
 #include <memory/Pointer.h>
-#include "../types.h"
+#include <types.h>
 
 class MissionManager {
 public:

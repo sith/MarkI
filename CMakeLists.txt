@@ -39,7 +39,7 @@ add_library(${PROJECT_NAME}
         src/state/standard/ConditionalState.cpp
         src/state/standard/ConditionalState.h
         src/state/State.cpp
-        src/memory/MemoryMonitor.h src/types.h
+        src/memory/MemoryMonitor.h
         src/missions/MissionManager.h
         src/missions/InMemoryMissionManager.h
         src/missions/InMemoryMissionManager.cpp
